@@ -10,9 +10,6 @@ const Navbar = () => {
       <li>
         <NavLink to={"/addCoffee"}>Add Coffee</NavLink>
       </li>
-      <li>
-        <NavLink to={"/updateCoffee"}>Update Coffee</NavLink>
-      </li>
     </>
   );
   return (
