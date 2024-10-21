@@ -46,7 +46,6 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         <div className="w-full flex justify-between items-center gap-6">
           <div>
             <h2 className="card-title">{name}</h2>
-            {/* <p>{parseInt(quantity)}</p> */}
             <p>{quantity}</p>
             <p>{supplier}</p>
             <p>{taste}</p>

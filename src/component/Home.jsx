@@ -7,7 +7,7 @@ const Home = () => {
     const [coffees, setCoffees] = useState(loadedCoffees);
   return (
     <div>
-      <h1>This is home page: {coffees.length}</h1>
+      <h1 className="text-4xl text-center font-bold">Coffees are here: {coffees.length}</h1>
       <div className="max-w-7xl mx-auto grid grid-cols-1 gap-6 my-20 md:grid-cols-2">
       {
           coffees.map(coffee => <CoffeeCard
