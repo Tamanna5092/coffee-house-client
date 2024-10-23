@@ -6,17 +6,30 @@ const Users = () => {
   const loadUsers = useLoaderData();
   const [users, setUsers] = useState(loadUsers);
 
-  const handleDelete = (id) => {
-    console.log('jkflasd')
+  const handleDelete = _id => {
+    console.log('handle Delete', _id)
     // make sure user is confirmed to delete
-    
+    fetch(`http://localhost:5000/user/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Delete",
+            text: "User deleted successfully!",
+            icon: "success",
+          });
+          const remainingUsers = users.filter(user => user._id !== _id);
+          setUsers(remainingUsers)
+        }
+      });
   };
   return (
     <div>
       <h1>Users : {loadUsers.length}</h1>
       <div className="overflow-x-auto">
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th></th>
@@ -26,9 +39,9 @@ const Users = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {users.map((user, i) => (
               <tr key={user._id}>
-                <th>1</th>
+                <th>{i+1}</th>
                 <td>{user.email}</td>
                 <td>{user.createdAt}</td>
                 <td>

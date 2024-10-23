@@ -31,7 +31,7 @@ const SignUP = () => {
 			if(data.insertedId){
 				Swal.fire({
 					title: "Success",
-					text: "User added successfully",
+					text: "User created successfully",
 					icon: "success",
 				  });
 			}
