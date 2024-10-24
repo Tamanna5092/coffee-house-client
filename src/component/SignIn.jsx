@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from './Provider/AuthProvider';
 
 const SignIn = () => {
+  const {signInUser} = useContext(AuthContext)
 
   const handleSignIn = e => {
     e.preventDefault()
-    console.log('fjlaskd')
+    const from = e.target;
+    const email = from.email.value;
+    const password = from.password.value;
+    console.log(email, password);
+
+    signInUser(email, password)
+    .then(resutl => {
+      console.log(resutl.user)
+      
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
   
     return (
@@ -23,13 +37,13 @@ const SignIn = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" name='email' placeholder="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
+          <input type="password" name='password' placeholder="password" className="input input-bordered" required />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>

@@ -32,18 +32,20 @@ const Users = () => {
         <table className="table">
           <thead>
             <tr>
-              <th></th>
-              <th>Email</th>
-              <th>Created At</th>
-              <th>Action</th>
+              <th className="text-black font-extrabold">No</th>
+              <th className="text-black font-extrabold">Email</th>
+              <th className="text-black font-extrabold">Created At</th>
+              <th className="text-black font-extrabold">Last Login</th>
+              <th className="text-black font-extrabold">Action</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, i) => (
               <tr key={user._id}>
-                <th>{i+1}</th>
+                <th>{i + 1}</th>
                 <td>{user.email}</td>
                 <td>{user.createdAt}</td>
+                <td></td>
                 <td>
                   <button
                     onClick={() => handleDelete(user._id)}
