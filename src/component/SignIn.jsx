@@ -11,9 +11,27 @@ const SignIn = () => {
     const password = from.password.value;
     console.log(email, password);
 
+
     signInUser(email, password)
-    .then(resutl => {
-      console.log(resutl.user)
+    .then(result => {
+      console.log(result.user)
+      const user = {
+        email,
+        lastLoggedAt: result.user?.metadata?.lastSignInTime
+      }
+      // update last logged at in the database
+      fetch('http://localhost:5000/user' , {
+        method: 'PATCH',
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(user)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+
       
     })
     .catch(error => {
