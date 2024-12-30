@@ -40,6 +40,7 @@ const AddCofffee = () => {
           icon: "success",
         });
       });
+      form.reset()
   };
   return (
     <div>
@@ -65,7 +66,7 @@ const AddCofffee = () => {
                     name="name"
                     id="name"
                     placeholder="Coffee Name"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>
@@ -81,7 +82,7 @@ const AddCofffee = () => {
                     name="quantity"
                     id="quantity"
                     placeholder="Available Quantity"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>
@@ -98,7 +99,7 @@ const AddCofffee = () => {
                     name="supplier"
                     id="supplier"
                     placeholder="Supplier"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>
@@ -112,7 +113,7 @@ const AddCofffee = () => {
                     name="teast"
                     id="teast"
                     placeholder="Taste"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>
@@ -129,7 +130,7 @@ const AddCofffee = () => {
                     name="category"
                     id="category"
                     placeholder="Category"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>
@@ -143,7 +144,7 @@ const AddCofffee = () => {
                     name="details"
                     id="details"
                     placeholder="Details"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>
@@ -160,7 +161,7 @@ const AddCofffee = () => {
                     name="photo"
                     id="photo"
                     placeholder="Photo"
-                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
+                    className="w-full border rounded-r-md focus:ring-inset p-2 dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600" required
                   />
                 </div>
               </fieldset>

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './Provider/AuthProvider';
+import axios from 'axios';
 
 const SignIn = () => {
   const {signInUser} = useContext(AuthContext)
@@ -19,18 +20,24 @@ const SignIn = () => {
         email,
         lastLoggedAt: result.user?.metadata?.lastSignInTime
       }
-      // update last logged at in the database
-      fetch('http://localhost:5000/user' , {
-        method: 'PATCH',
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify(user)
-      })
-      .then(res => res.json())
+
+      axios.patch('http://localhost:5000/user', user)
       .then(data => {
-        console.log(data)
+        console.log(data.data)
       })
+
+      // update last logged at in the database
+      // fetch('http://localhost:5000/user' , {
+      //   method: 'PATCH',
+      //   headers: {
+      //     "Content-type": "application/json"
+      //   },
+      //   body: JSON.stringify(user)
+      // })
+      // .then(res => res.json())
+      // .then(data => {
+      //   console.log(data)
+      // })
 
       
     })

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "./Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SignUP = () => {
   const { createUser } = useContext(AuthContext);
@@ -18,24 +19,34 @@ const SignUP = () => {
 		// new user has been created
 		const createdAt = result.user?.metadata?.creationTime;
 		const user = {email, createdAt};
-		fetch('http://localhost:5000/user', {
-			method: 'POST',
-			headers: {
-				"Content-type": "application/json"
-			},
-			body: JSON.stringify(user)
-		})
-		.then(res => res.json())
-		.then(data => {
-			console.log(data)
-			if(data.insertedId){
-				Swal.fire({
-					title: "Success",
-					text: "User created successfully",
-					icon: "success",
-				  });
-			}
-		})
+
+    // using axios
+    axios.post('http://localhost:5000/user', user)
+    .then(data => {
+      console.log(data.data.insertedId)
+      console.log('data added database')
+    })
+
+
+    // using fetch
+		// fetch('http://localhost:5000/user', {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		"Content-type": "application/json"
+		// 	},
+		// 	body: JSON.stringify(user)
+		// })
+		// .then(res => res.json())
+		// .then(data => {
+		// 	console.log(data)
+		// 	if(data.insertedId){
+		// 		Swal.fire({
+		// 			title: "Success",
+		// 			text: "User created successfully",
+		// 			icon: "success",
+		// 		  });
+		// 	}
+		// })
 	})
 	.catch(error => console.error(error))
   };

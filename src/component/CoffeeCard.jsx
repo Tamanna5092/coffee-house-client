@@ -39,14 +39,14 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
   return (
     <div>
-      <div className="card card-side h-80 bg-base-100 shadow-xl gap-6">
+      <div className="card card-side h-80 bg-[#F5F4F1] gap-6">
         <figure>
-          <img className="w-48 h-60" src={photo} alt="Movie" />
+          <img className="w-48 h-60 " src={photo} alt="Movie" />
         </figure>
         <div className="w-full flex justify-between items-center gap-6">
           <div>
             <h2 className="card-title">{name}</h2>
-            <p>{quantity}</p>
+            <p>{quantity} bages</p>
             <p>{supplier}</p>
             <p>{taste}</p>
             <p>{details}</p>
